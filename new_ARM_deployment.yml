@@ -4,7 +4,7 @@
   gather_facts: False
   vars:
     # Variables 'resgrp' and 'location' need to be provided at command line with arg --extra-vars
-    templateLink: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/ARMtemplate-newVM.json'
+    templateLink: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/addedextention.json'
     # No parameters required for this template
     #paramsLink: ''
    
