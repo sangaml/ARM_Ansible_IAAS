@@ -19,6 +19,6 @@
         template_link: '{{ templateLink }}'
      #   parameters_link: '{{ paramsLink }}'
         keyVaultName: '{{ keyVaultName }}'         
-        tenantId: '{{ tenantId }}
+        tenantId: '{{ tenantId }}'
         objectId: '{{ objectId }}'
         secretName: '{{ secretName }}'
