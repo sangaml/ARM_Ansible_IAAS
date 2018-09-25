@@ -4,7 +4,6 @@
   "parameters": {
     "keyVaultName": {
       "type": "string",
-      "defaultValue": "sangamvault",
       "metadata": {
         "description": "Name of the vault"
       }
