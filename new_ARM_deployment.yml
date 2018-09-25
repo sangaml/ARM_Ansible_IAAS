@@ -40,7 +40,7 @@
          state: present
          secret_name: sangamsec
          secret_value: Sangam@lonkar14
-         keyvault_uri: https://sangamkeyvault.vault.azure.net/
+         keyvault_uri: https://samplekeyvaultsa.vault.azure.net/
          tags:
                 testing: testing
                 delete: never           
