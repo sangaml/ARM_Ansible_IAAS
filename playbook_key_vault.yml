@@ -6,7 +6,7 @@
     - name: Create instance of Key Vault
       azure_rm_keyvault:
           resource_group: '{{ rsgrp }}'
-          vault_name: samplekeyvault
+          vault_name: sangamkeyvault
           enabled_for_deployment: yes
           vault_tenant: '{{ tenantId }}'
           sku:
