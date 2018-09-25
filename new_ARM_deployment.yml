@@ -35,8 +35,9 @@
              keys:
               - get
               - list
-   - name: Create a secret
-     azure_rm_keyvaultsecret:
+  - name: Create a secret
+    azure_rm_keyvaultsecret:
+         state: present
          secret_name: sangamsec
          secret_value: Sangam@lonkar14
          keyvault_uri: https://sangamkeyvault.vault.azure.net/
