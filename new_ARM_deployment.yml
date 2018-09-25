@@ -26,16 +26,24 @@
         resource_group: '{{ resgrp }}'
         vault_name: samplekeyvaultsa
         enabled_for_deployment: yes
-        vault_tenant: 1d023485-4e7b-481c-84b5-177d5a4d5729
+        vault_tenant: '{{ tenantId }}'
         sku:
           name: standard
         access_policies:
-           - tenant_id: 1d023485-4e7b-481c-84b5-177d5a4d5729
-             object_id: 0fc42cb1-71a9-40b7-833d-367dcb38055f
+           - tenant_id: '{{ tenantId }}'
+             object_id: '{{ objectId }}'
              keys:
               - get
               - list
-  - name: Deploy ARM template
+   - name: Create a secret
+     azure_rm_keyvaultsecret:
+         secret_name: sangamsec
+         secret_value: Sangam@lonkar14
+         keyvault_uri: https://sangamkeyvault.vault.azure.net/
+         tags:
+                testing: testing
+                delete: never           
+  - name: Deploy sql server and create data base
     azure_rm_deployment:
         state: present
         resource_group_name: '{{ resgrp }}'
