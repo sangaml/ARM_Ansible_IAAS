@@ -35,15 +35,6 @@
              keys:
               - get
               - list
-  - name: Create a secret
-    azure_rm_keyvaultsecret:
-         state: present
-         secret_name: sangamsec
-         secret_value: Sangam@lonkar14
-         keyvault_uri: https://samplekeyvaultsa.vault.azure.net/
-         tags:
-                testing: testing
-                delete: never           
   - name: Deploy sql server and create data base
     azure_rm_deployment:
         state: present
