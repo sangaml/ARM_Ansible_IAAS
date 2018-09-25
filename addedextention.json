@@ -161,7 +161,7 @@
       "resources": [ 
       {
         "type": "extensions",
-        "name": "[concat(variables('vmName'),'/Microsoft.Powershell.DSC')]",
+        "name": "Microsoft.Powershell",
         "apiVersion": "2018-04-01",
         "location": "[resourceGroup().location]",
         "dependsOn": [
