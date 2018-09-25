@@ -6,7 +6,7 @@
     # Variables 'resgrp' and 'location' need to be provided at command line with arg --extra-vars
     templateLink: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/KeyVaultSetup.json'
     # No parameters required for this template
-    #paramsLink: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/KeyVaultSetup.parameters.json'
+    paramsLink: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/KeyVaultSetup.parameters.json'
    
   tasks:
   - name: Deploy ARM template
@@ -15,5 +15,6 @@
         resource_group_name: '{{ resgrp }}'
         # location seems to be not optional
         location: '{{ location }}'
+        parameters_link: '{{ paramsLink }}'
         template_link: '{{ templateLink }}'
      #   parameters_link: '{{ paramsLink }}'
