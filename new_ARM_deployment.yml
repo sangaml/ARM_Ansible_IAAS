@@ -4,14 +4,24 @@
   gather_facts: False
   vars:
     # Variables 'resgrp' and 'location' need to be provided at command line with arg --extra-vars
+    templatekey: 'https://raw.githubusercontent.com/sangaml/testarm/master/keyvault.json'
+    paramskey: 'https://raw.githubusercontent.com/sangaml/testarm/master/keyvault.parameters.json'
     templateLink: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/addedextention.json'
     sqlserver: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/sql-server.json'
     sqlparamsLink: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/sql-server.parameters.json'
     # No parameters required for this template
     #paramsLink: ''
-   
   tasks:
-  - name: Deploy ARM template
+  - name: Deploy vault key template
+    azure_rm_deployment:
+        state: present
+        resource_group_name: '{{ resgrp }}'
+        # location seems to be not optional
+        location: '{{ location }}'
+        template_link: '{{ templatekey }}'
+        parameters_link: '{{ paramskey }}' 
+  tasks:
+  - name: Deploy Iaas ARM template
     azure_rm_deployment:
         state: present
         resource_group_name: '{{ resgrp }}'
@@ -20,21 +30,6 @@
         template_link: '{{ templateLink }}'
        #parameters_link: '{{ paramsLink }}'
        
-  - name: Create instance of Key Vault
-    azure_rm_keyvault:
-        state: present
-        resource_group: '{{ resgrp }}'
-        vault_name: samplekeyvaultsa
-        enabled_for_deployment: yes
-        vault_tenant: '{{ tenantId }}'
-        sku:
-          name: standard
-        access_policies:
-           - tenant_id: '{{ tenantId }}'
-             object_id: '{{ objectId }}'
-             keys:
-              - get
-              - list
   - name: Deploy sql server and create data base
     azure_rm_deployment:
         state: present
