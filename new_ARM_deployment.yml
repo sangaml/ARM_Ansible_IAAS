@@ -4,8 +4,8 @@
   gather_facts: False
   vars:
     # Variables 'resgrp' and 'location' need to be provided at command line with arg --extra-vars
-    templatekey: 'https://raw.githubusercontent.com/sangaml/testarm/master/keyvault.json'
-    paramskey: 'https://raw.githubusercontent.com/sangaml/testarm/master/keyvault.parameters.json'
+    templatekey: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/keyvault.json'
+    paramskey: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/keyvault.parameters.json'
     templateLink: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/addedextention.json'
     sqlserver: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/sql-server.json'
     sqlparamsLink: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/sql-server.parameters.json'
