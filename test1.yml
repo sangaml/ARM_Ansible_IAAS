@@ -19,5 +19,5 @@
         resource_group_name: '{{ resgrp }}'
         # location seems to be not optional
         location: '{{ location }}'
-        template_link: '{{ templatekey }}'
+        template_link: '{{ templateLink }}'
         #parameters_link: '{{ paramskey }}' 
