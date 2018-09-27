@@ -9,8 +9,8 @@
     templateLink: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/addedextention.json'
     sqlserver: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/sql-server.json'
     sqlparamsLink: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/sql-server.parameters.json'
-    # No parameters required for this template
-    #paramsLink: ''
+    mongo: 'https://raw.githubusercontent.com/sangaml/testarm/master/mongo.json'
+    mongoparams: 'https://raw.githubusercontent.com/sangaml/testarm/master/mongo.parameters.json'
   tasks:
   - name: Deploy vault key template
     azure_rm_deployment:
@@ -20,6 +20,16 @@
         location: '{{ location }}'
         template_link: '{{ templatekey }}'
         parameters_link: '{{ paramskey }}' 
+        - name: CREATE mongo db
+  tasks:
+  - name: Deploy mongo template
+    azure_rm_deployment:
+        state: present
+        resource_group_name: '{{ resgrp }}'
+        # location seems to be not optional
+        location: '{{ location }}'
+        template_link: '{{ mongo }}'
+        parameters_link: '{{ mongoparams }}'
   tasks:
   - name: Deploy Iaas ARM template
     azure_rm_deployment:
@@ -28,14 +38,3 @@
         # location seems to be not optional
         location: '{{ location }}'
         template_link: '{{ templateLink }}'
-       #parameters_link: '{{ paramsLink }}'
-       
-  - name: Deploy sql server and create data base
-    azure_rm_deployment:
-        state: present
-        resource_group_name: '{{ resgrp }}'
-        # location seems to be not optional
-        location: '{{ location }}'
-       # parameters_link: '{{ paramsLink }}'
-        template_link: '{{ sqlserver }}'
-        parameters_link: '{{ sqlparamsLink }}'  
