@@ -173,11 +173,7 @@
             "typeHandlerVersion": "2.76",
             "autoUpgradeMinorVersion": true,
             "settings": {
-                "wmfVersion": "latest",
-                "configuration": {
-                  "url": "https://github.com/sangaml/testarm/blob/master/nodejs.ps1",
-                  "script": "nodejs.ps1"
-                }
+                "wmfVersion": "latest"         
             }
         }
       }
