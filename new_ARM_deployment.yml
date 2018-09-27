@@ -20,7 +20,7 @@
         location: '{{ location }}'
         template_link: '{{ templatekey }}'
         parameters_link: '{{ paramskey }}' 
-  tasks:
+  #tasks:
  # - name: Deploy mongo template
  #   azure_rm_deployment:
  #       state: present
