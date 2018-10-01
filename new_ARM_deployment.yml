@@ -21,7 +21,9 @@
         template_link: '{{ templatekey }}'
         parameters_link: '{{ paramskey }}' 
         
-- hosts: localhost      
+- hosts: localhost 
+  connection: local
+  gather_facts: False
   vars:
       mongo: 'https://raw.githubusercontent.com/sangaml/testarm/master/mongo.json'
       mongoparams: 'https://raw.githubusercontent.com/sangaml/testarm/master/mongo.parameters.json'
@@ -36,6 +38,8 @@
         parameters_link: '{{ mongoparams }}'
         
 - hosts: localhost
+  connection: local
+  gather_facts: False
   vars:
       templateLink: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/addedextention.json'
   tasks:
