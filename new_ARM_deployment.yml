@@ -26,8 +26,8 @@
       mongo: 'https://raw.githubusercontent.com/sangaml/testarm/master/mongo.json'
       mongoparams: 'https://raw.githubusercontent.com/sangaml/testarm/master/mongo.parameters.json'
   tasks:      
-- name: Deploy mongo template
-  azure_rm_deployment:
+    - name: Deploy mongo template
+      azure_rm_deployment:
         state: present
         resource_group_name: '{{ resgrp }}'
         # location seems to be not optional
@@ -39,8 +39,8 @@
   vars:
       templateLink: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/addedextention.json'
   tasks:
-- name: Deploy Iaas ARM template
-  azure_rm_deployment:
+    - name: Deploy Iaas ARM template
+      azure_rm_deployment:
         state: present
         resource_group_name: '{{ resgrp }}'
         # location seems to be not optional
