@@ -22,8 +22,7 @@
         location: '{{ location }}'
         template_link: '{{ templatekey }}'
         parameters_link: '{{ paramskey }}' 
-  
-  tasks:      
+      
     - name: Deploy mongo template
       azure_rm_deployment:
         state: present
@@ -33,7 +32,6 @@
         template_link: '{{ mongo }}'
         parameters_link: '{{ mongoparams }}'
         
-  tasks:
     - name: Deploy Iaas ARM template
       azure_rm_deployment:
         state: present
