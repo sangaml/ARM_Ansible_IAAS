@@ -6,7 +6,9 @@
     # Variables 'resgrp' and 'location' need to be provided at command line with arg --extra-vars
     templatekey: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/keyvault.json'
     paramskey: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/keyvault.parameters.json'
-    
+    mongo: 'https://raw.githubusercontent.com/sangaml/testarm/master/mongo.json'
+    mongoparams: 'https://raw.githubusercontent.com/sangaml/testarm/master/mongo.parameters.json'
+    templateLink: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/addedextention.json'
     #sqlserver: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/ARMtemplate-newVM.json'
     #sqlparamsLink: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/sql-server.parameters.json'
     
@@ -20,13 +22,7 @@
         location: '{{ location }}'
         template_link: '{{ templatekey }}'
         parameters_link: '{{ paramskey }}' 
-        
-- hosts: localhost 
-  connection: local
-  gather_facts: False
-  vars:
-      mongo: 'https://raw.githubusercontent.com/sangaml/testarm/master/mongo.json'
-      mongoparams: 'https://raw.githubusercontent.com/sangaml/testarm/master/mongo.parameters.json'
+  
   tasks:      
     - name: Deploy mongo template
       azure_rm_deployment:
@@ -37,11 +33,6 @@
         template_link: '{{ mongo }}'
         parameters_link: '{{ mongoparams }}'
         
-- hosts: localhost
-  connection: local
-  gather_facts: False
-  vars:
-      templateLink: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/addedextention.json'
   tasks:
     - name: Deploy Iaas ARM template
       azure_rm_deployment:
