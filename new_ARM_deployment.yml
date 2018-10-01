@@ -13,15 +13,15 @@
     #sqlparamsLink: 'https://raw.githubusercontent.com/sangaml/ARM_Ansible_IAAS/master/sql-server.parameters.json'
     
     
-  tasks:
-  - name: Deploy vault key template
-    azure_rm_deployment:
-        state: present
-        resource_group_name: '{{ resgrp }}'
+ # tasks:
+ # - name: Deploy vault key template
+ #   azure_rm_deployment:
+ #       state: present
+ #       resource_group_name: '{{ resgrp }}'
         # location seems to be not optional
-        location: '{{ location }}'
-        template_link: '{{ templatekey }}'
-        parameters_link: '{{ paramskey }}' 
+ #       location: '{{ location }}'
+ #       template_link: '{{ templatekey }}'
+ #       parameters_link: '{{ paramskey }}' 
       
   - name: Deploy mongo template
     azure_rm_deployment:
@@ -32,10 +32,10 @@
         template_link: '{{ mongo }}'
         parameters_link: '{{ mongoparams }}'
         
-  - name: Deploy Iaas ARM template
-    azure_rm_deployment:
-        state: present
-        resource_group_name: '{{ resgrp }}'
-        # location seems to be not optional
-        location: '{{ location }}'
-        template_link: '{{ templateLink }}'
+ # - name: Deploy Iaas ARM template
+  #  azure_rm_deployment:
+  #      state: present
+  #      resource_group_name: '{{ resgrp }}'
+  #      # location seems to be not optional
+  #      location: '{{ location }}'
+  #      template_link: '{{ templateLink }}'
