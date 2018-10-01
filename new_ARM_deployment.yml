@@ -23,8 +23,8 @@
         template_link: '{{ templatekey }}'
         parameters_link: '{{ paramskey }}' 
       
-    - name: Deploy mongo template
-      azure_rm_deployment:
+  - name: Deploy mongo template
+    azure_rm_deployment:
         state: present
         resource_group_name: '{{ resgrp }}'
         # location seems to be not optional
@@ -32,8 +32,8 @@
         template_link: '{{ mongo }}'
         parameters_link: '{{ mongoparams }}'
         
-    - name: Deploy Iaas ARM template
-      azure_rm_deployment:
+  - name: Deploy Iaas ARM template
+    azure_rm_deployment:
         state: present
         resource_group_name: '{{ resgrp }}'
         # location seems to be not optional
