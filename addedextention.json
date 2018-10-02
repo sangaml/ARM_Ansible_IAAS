@@ -11,9 +11,9 @@
       }
     },
     "variables": {
-      "dnsLabelPrefix": "fsfsdxsds",
-      "adminUsername": "WinAdmin",
-      "adminPassword": "AzureUser12#",
+      "dnsLabelPrefix": "sangamweb",
+      "adminUsername": "administrator",
+      "adminPassword": "Zxc5vbnm@",
       "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'sawinvm')]",
       "nicName": "myVMNic",
       "addressPrefix": "10.0.0.0/16",
