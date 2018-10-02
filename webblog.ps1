@@ -74,7 +74,7 @@ if ($install_node) {
     write-host "----------------------------`n"
 
     write-host "[NODE] running $node_msi"
-    Start-Process $node_msi /qn
+    Start-Process $node_msi /qn -wait
     
     $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") 
     
