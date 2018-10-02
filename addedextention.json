@@ -20,7 +20,7 @@
       "subnetName": "Subnet",
       "subnetPrefix": "10.0.0.0/24",
       "publicIPAddressName": "myPublicIP",
-      "vmName": "SimpleWinVM",
+      "vmName": "WebBlog",
       "vmExtName": "myextension",
       "virtualNetworkName": "MyVNET",
       "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]"
