@@ -12,7 +12,7 @@
     },
     "variables": {
       "dnsLabelPrefix": "sangamweb",
-      "adminUsername": "administrator",
+      "adminUsername": "adminuser",
       "adminPassword": "Zxc5vbnm@",
       "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'sawinvm')]",
       "nicName": "myVMNic",
